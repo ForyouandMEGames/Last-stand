@@ -1,74 +1,97 @@
 <!DOCTYPE html>
 <html>
+<head>
+
+    <title>Last Stand V1.0.0</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: lightgray;
+            text-align: center;
+        }
+
+        .play-button {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: none;
+            background-color: black;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
+
+        .shoot-button {
+            padding: 15px 25px;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
 <body>
 
-<link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <!-- MAIN MENU -->
 
-<style>
-    body {
-        font-family: 'Lexend', sans-serif;
-        background-color: lightgray;
-        text-align: center;
-    }
+    <h1>Last Stand V1.0.0</h1>
 
-    .play-button {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        border: none;
-        background-color: black;
-        color: white;
-        font-size: 35px;
-        cursor: pointer;
-    }
-</style>
+    <p>
+        Welcome to Last Stand. You're one of the few people who managed
+        to survive the outbreak of the SIV-28 Virus!
+    </p>
 
-<h1>Last Stand V1.0.0</h1>
+    <p>
+        Will you manage to survive in this chaotic world of destruction and torture?
+    </p>
 
-<p>Welcome to Last Stand. You're one of the few people who managed to survive the outbreak of the SIV-28 Virus!</p>
+    <h2>Test out our beta version!</h2>
 
-<p>Will you manage to survive in this chaotic world of destruction and torture?</p>
+    <button class="play-button" onclick="startGame()">🎮</button>
 
-<h2>Test out our beta version!</h2>
 
-<button class="play-button">🎮</button>
+    <!-- GAME -->
+
+    <div id="game" style="display: none;">
+
+        <h1>LAST STAND</h1>
+
+        <p>❤️ Health: <span id="health">100</span></p>
+
+        <p>🧟 Zombies: <span id="zombies">5</span></p>
+
+        <p>🪙 Coins: <span id="coins">0</span></p>
+
+        <button class="shoot-button" onclick="shoot()">🔫 Shoot</button>
+
+    </div>
+
+
+    <script>
+
+        let health = 100;
+        let zombies = 5;
+        let coins = 0;
+
+        function startGame() {
+            document.getElementById("game").style.display = "block";
+        }
+
+        function shoot() {
+
+            if (zombies > 0) {
+                zombies--;
+                coins++;
+            }
+
+            document.getElementById("zombies").textContent = zombies;
+            document.getElementById("coins").textContent = coins;
+
+        }
+
+    </script>
 
 </body>
 </html>
-
-<button class="play-button" onclick="startGame()">🎮 Play!</button>
-
-<div id="game" style="display:none;">
-
-    <h1>LAST STAND</h1>
-
-    <p>❤️ Health: <span id="health">100</span></p>
-    <p>🧟 Zombies: <span id="zombies">5</span></p>
-    <p>🪙 Coins: <span id="coins">0</span></p>
-
-    <button onclick="shoot()">🔫 Shoot</button>
-
-</div>
-
-<script>
-let health = 100;
-let zombies = 5;
-let coins = 0;
-
-function startGame() {
-    document.getElementById("game").style.display = "block";
-}
-
-function shoot() {
-    if (zombies > 0) {
-        zombies--;
-        coins++;
-    }
-
-    document.getElementById("zombies").textContent = zombies;
-    document.getElementById("coins").textContent = coins;
-}
-</script>
-
-}
-</script>
