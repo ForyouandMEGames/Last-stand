@@ -35,3 +35,33 @@
 
 </body>
 </html>
+
+<div id="game" style="display:none;">
+
+    <h1>LAST STAND</h1>
+
+    <p>❤️ Health: <span id="health">100</span></p>
+    <p>🧟 Zombies: <span id="zombies">5</span></p>
+    <p>🪙 Coins: <span id="coins">0</span></p>
+
+    <button onclick="shoot()">🔫 Shoot</button>
+
+</div>
+
+<script>
+let health = 100;
+let zombies = 5;
+let coins = 0;
+
+function shoot() {
+
+    if (zombies > 0) {
+        zombies--;
+        coins += 1;
+    }
+
+    document.getElementById("zombies").textContent = zombies;
+    document.getElementById("coins").textContent = coins;
+
+}
+</script>
