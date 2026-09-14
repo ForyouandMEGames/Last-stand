@@ -36,6 +36,8 @@
 </body>
 </html>
 
+<button class="play-button" onclick="startGame()">🎮 Play!</button>
+
 <div id="game" style="display:none;">
 
     <h1>LAST STAND</h1>
@@ -53,15 +55,20 @@ let health = 100;
 let zombies = 5;
 let coins = 0;
 
-function shoot() {
+function startGame() {
+    document.getElementById("game").style.display = "block";
+}
 
+function shoot() {
     if (zombies > 0) {
         zombies--;
-        coins += 1;
+        coins++;
     }
 
     document.getElementById("zombies").textContent = zombies;
     document.getElementById("coins").textContent = coins;
+}
+</script>
 
 }
 </script>
